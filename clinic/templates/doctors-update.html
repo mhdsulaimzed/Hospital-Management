@@ -1,0 +1,20 @@
+
+{% include "base.html" %}
+{% include "nav.html" %}
+
+
+<div class="card">
+    <div class="card-header">
+      Add Doctor
+    </div>
+    <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-info">Update</button>
+
+        </form>
+        <br>
+        
+    </div>
+</div>

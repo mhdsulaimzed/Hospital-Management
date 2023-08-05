@@ -1,0 +1,23 @@
+ {% include "base.html" %}
+ {% include "nav.html" %}
+
+ <div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                  Update appointments
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {%csrf_token%}
+                        {{form.as_p}}
+                        <button type="submit" class="btn btn-danger">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+ </div>

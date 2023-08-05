@@ -1,0 +1,61 @@
+{% include "base.html" %}
+{% include "nav.html" %}
+
+<a href="{%url 'log-out'%}"> logout</a>
+
+<div class="container">
+  <h3 style="text-align: center;">Appoinments Request List</h3>
+  <br>
+    
+      <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Patients name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Doctor</th>
+            <th scope="col">Appointment date</th>
+            <th scope="col">Time slot</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {%for a in appointments%}
+          <tr>
+            <th scope="row">{{a.patient_name}}</th>
+            <td>{{a.age}}</td>
+            <td>{{a.gender}}</td>
+            <td>{{a.doctor}}</td>
+            <td>{{a.date}}</td>
+            <td>{{a.time_slot}}</td>
+            <td>{{a.status}}</td>
+            <td><a href="{%url "app-update" a.id%}" class="btn btn-sm btn-danger">update</a></td>
+          </tr>
+
+
+        {%endfor%}
+          
+          
+        </tbody>
+      </table>
+    
+    
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Make new appointments
+  </div>
+  <div class="card-body">
+      <a href="{%url "doctors"%}" class="btn btn-info">Doctors</a>
+  </div>
+</div>
+
+
+
+
+
+
